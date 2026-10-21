@@ -1,7 +1,10 @@
-FROM tomcat:9.0-jdk11
+from maven:3.6.1-jdk-8-alpine
+workdir /work
+copy . .
+run mvn clean package
 
-MAINTAINER MithunTechnologies
 
-COPY target/maven-web-application.war /usr/local/tomcat/webapps/maven-web-application.war
-
-EXPOSE 8080
+from tomcat:9.0-jdk11
+copy --from=0 /work/target/maven-web-application*.war /usr/local/tomcat/webapps/
+cmd ["/usr/local/tomcat/bin/catalina.sh", "run"]
+expose 8080
