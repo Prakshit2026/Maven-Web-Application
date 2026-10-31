@@ -1,6 +1,6 @@
 services:
  MavenWeb:
-  image: madhusudhandevops/maven-web-application:latest
+  image: madhusudhandevops/maven-web-application
   ports: 
    - 7070:8080
   networks: 
