@@ -3,9 +3,9 @@ services:
   image: madhusudhandevops/maven-web-application:latest
   ports: 
    - 7070:8080
-  Network: 
+  networks: 
    - NewNetwork
 
- networks:
+networks:
   NewNetwork:
    driver: bridge
