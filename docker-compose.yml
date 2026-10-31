@@ -1,6 +1,6 @@
 services:
  MavenWeb:
-  image: madhusudhandevops/maven-web-application
+  image: madhusudhandevops/maven-web-application:VERSION
   restart: always
   ports: 
    - 7070:8080
